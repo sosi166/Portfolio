@@ -1,0 +1,617 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Crimson Text', serif;
+    letter-spacing: 1px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #022E35;
+}
+
+h1, h2, h3, p, a {
+    color: white;
+    text-decoration: none;
+}
+
+p {
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+h2 {
+    margin: 60px 0 30px 0;
+    font-size: 36px;
+}
+
+h3 {
+    font-size: 32px;
+    margin: 20px 0 20px 0;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.btn {
+    padding: 12px 32px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    background: teal;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-light {
+    background: transparent;
+    color: white;
+    transition: 0.3s;
+}
+
+.btn:hover, .btn-light:hover {
+    background: white;
+    color: teal;
+    transition: 0.3s;
+}
+
+::placeholder {
+    color: white;
+    opacity: 0.5;
+}
+
+:-ms-input-placeholder {
+    color: white;
+}
+
+::-webkit-input-placeholder {
+    color: white;
+}
+
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(00, 80, 80, 0.3);
+}
+
+::-webkit-scrollbar-thumb {
+    background: teal;
+    border-radius: 30px;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    height: 90px;
+    z-index: 10;
+
+    a {
+        cursor: pointer;
+    }
+
+    .navMenu {
+        display: flex;
+
+        li {
+            padding: 0 1rem;
+
+            a {
+                font-size: 1.2rem;
+                font-weight: 500;
+                transition: 0.3s;
+            }
+
+            a:hover {
+                border-bottom: 1px dotted white;
+                transition: 0.3s;
+            }
+        }
+    }
+
+    .hamburger {
+        display: none;
+    }
+}
+
+.navImg {
+    height: 600px;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+
+    .contentCenter {
+        display: flex;
+        position: absolute;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        align-content: center;
+        text-align: center;
+        left: 40px;
+        right: 40px;
+        top: 120px;
+
+        .contentLeft {
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            justify-content: center;
+            position: relative;
+
+
+            h1 {
+                font-size: 60px;
+                padding: 10px 0 30px 0;
+            }
+
+            p {
+                font-weight: 200;
+                text-transform: uppercase;
+            }
+
+            .btn {
+                margin: 1rem 0.2rem;
+            }
+        }
+
+        .contentRight {
+            width: 400px;
+            height: 400px;
+            animation: animate 2s infinite ease alternate;
+
+            img {
+                width: 400px;
+                height: 400px;
+            }
+        }
+
+        @keyframes animate {
+            to {
+                transform: translateX(15px)
+            }
+        }
+    }
+}
+
+.portfolio {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    margin-top: 20px;
+
+    .content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        .swiper-pagination-bullet {
+            background: var(--swiper-pagination-bullet-inactive-color, white);
+            opacity: var(--swiper-pagination-bullet-inactive-opacity, .8);
+        }
+
+        .swiper-pagination-bullet-active {
+            background: var(--swiper-pagination-bullet-inactive-color, teal);
+            opacity: var(--swiper-pagination-bullet-inactive-opacity, .8);
+        }
+
+        .mySwiper {
+            width: 100%;
+            padding-bottom: 30px;
+            background-position: center;
+
+            .slide {
+                background-position: center;
+                background-size: cover;
+                width: 400px;
+
+                img {
+                    display: block;
+                    width: 400px;
+                    object-fit: cover;
+                    border-radius: 30px;
+                }
+            }
+        }
+    }
+}
+
+.card {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    margin: 20px;
+    padding: 15px;
+    border-radius: 30px;
+    cursor: pointer;
+    color: white;
+    background: rgba(00,80,80, 0.9);
+    box-shadow: 4px 4px 8px teal;
+    transition: 0.3s all ease;
+
+    p {
+        margin: 0 0 20px 0 !important;
+    }
+}
+
+.card:hover {
+    background-color: teal;
+    color: black;
+    transform: translateY(-10px);
+    box-shadow: 4px 4px 8px teal, 4px -4px 8px teal;
+    color: black;
+    transition: 0.3s;
+
+    a {
+        font-weight: 700;
+    }
+}
+
+.about {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    border-radius: 30px;
+    margin-top: 20px;
+
+    .aboutMain {
+        display: flex;
+        flex-direction: column;
+        background-color: rgba(00,80,80, 0.9);
+        padding: 20px 30px 20px 30px;
+
+        .content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .aboutLeft {
+                justify-content: center;
+                align-items: center;
+                width: 300px;
+                height: 300px;
+
+                img {
+                    width: 300px;
+                    height: 300px;
+                    object-fit: cover;
+                }
+            }
+
+            .aboutRight {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                a {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 200px;
+                    margin-top: 20px;
+
+                    :first-child {
+                        margin-left: 3px;
+                    }
+                }
+            }
+        }
+
+        .contentBottom {
+            display: flex;
+            flex-direction: column;
+            margin-top: 20px;
+
+            .certificates {
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                align-items: center;
+                text-align: center;
+                justify-content: center;
+
+                a {
+                    display: flex;
+                    align-items: center;
+                    margin: 10px;
+                    color: white;
+                    font-size: 20px;
+                    border: none;
+                    font-weight: 500;
+
+                    :first-child {
+                        margin-left: 3px;
+                    }
+                }
+
+                a:hover {
+                    border-bottom: 1px dotted white;
+                }
+            }
+        }
+    }
+}
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    color: white;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    margin: 20px 0 50px 0;
+
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        width: 70%;
+
+        .inputs {
+            display: flex;
+            gap: 25px;
+
+            input {
+                padding: 20px;
+                border: none;
+                background-color: rgba(00,80,80, 0.9);
+                color: white;
+                border-radius: 30px;
+                outline: none;
+                width: 50%;
+            }
+        }
+
+        textarea {
+            padding: 20px;
+            border: none;
+            border-radius: 30px;
+            background-color: rgba(00,80,80, 0.9);
+            color: white;
+            outline: none;
+        }
+
+        button {
+            background-color: rgba(00,80,80, 0.9);
+            color: white;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background-color: teal;
+            color: white;
+            transition: 0.3s;
+        }
+    }
+
+    p {
+        margin-top: 25px;
+    }
+
+    .social {
+        display: flex;
+
+        a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0px 10px 0px 10px;
+        }
+
+        margin-bottom: 25px;
+    }
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-bottom: 10px;
+    z-index: 1;
+    font-size: 14px;
+    color: white;
+}
+
+@media screen and (max-width: 1024px) {
+    .btn {
+        font-size: 0.8rem;
+    }
+
+    p {
+        font-size: 18px;
+    }
+
+    h2 {
+        font-size: 32px;
+    }
+
+    h3 {
+        font-size: 28px;
+    }
+
+    .nav {
+        .navMenu {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100vh;
+            background: rgba(0,0,0, 0.5);
+            position: absolute;
+            top: 0;
+            right: -100%;
+            z-index: -3;
+            transition: 0.3s;
+
+            li {
+                padding: 1rem 0;
+
+                a {
+                    font-size: 2rem;
+                }
+            }
+        }
+
+        .active {
+            right: 0;
+        }
+
+        .hamburger {
+            display: initial;
+        }
+    }
+   
+    .navImg {
+
+        .contentCenter {
+            flex-direction: column-reverse;
+
+            .contentRight {
+                width: 300px;
+                height: 300px;
+                margin-bottom: 20px;
+
+                img {
+                    width: 300px;
+                    height: 300px;
+                }
+            }
+
+            .contentLeft {
+                h1 {
+                    font-size: 40px;
+                }
+            }
+        }
+    }
+  
+    .about {
+        .aboutMain {
+            .content {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .contentBottom .sertificate a {
+                font-size: 18px;
+            }
+        }
+    }
+
+    
+}
+
+@media screen and (max-width: 768px) {
+
+    .btn {
+        font-size: 0.7rem;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    h2 {
+        font-size: 28px;
+        margin-top: 80px;
+    }
+
+    h3 {
+        font-size: 22px;
+    }
+
+    .portfolio .content .mySwiper .slide {
+        width: 300px;
+
+        img {
+            display: block;
+            width: 300px;
+        }
+    }
+
+    .about .aboutMain .contentBottom .sertificate a {
+        font-size: 14px;
+    }
+
+    .contact {
+        form {
+            .inputs {
+                display: flex;
+                flex-direction: column;
+                gap: 25px;
+
+                input {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    .footer {
+        font-size: 12px;
+    }
+}
+
+
+@media screen and (max-width: 350px) {
+    .navImg {
+        height: 500px;
+
+        .contentCenter {
+
+            .contentRight {
+                width: 250px;
+                height: 250px;
+
+                img {
+                    width: 250px;
+                    height: 250px;
+                }
+            }
+
+            .contentLeft {
+                h1 {
+                    font-size: 30px;
+                }
+            }
+        }
+    }
+
+    .portfolio .content .mySwiper .slide {
+        width: 250px;
+
+        img {
+            display: block;
+            width: 250px;
+        }
+    }
+}
